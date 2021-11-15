@@ -1,0 +1,21 @@
+diff --git a/src/inspector.cpp b/src/inspector.cpp
+index e485f5d..b0a9d3d 100644
+--- a/src/inspector.cpp
++++ b/src/inspector.cpp
+@@ -372,6 +372,7 @@ int main(int ac, char *av[])
+                 }
+         }
+ 
++#if ENABLE_PSEUDOANONYMISATION
+         if ( vm.count("pseudo-anonymisation-key") != 0 &&
+              pseudo_anon_key.size() != 16 )
+         {
+@@ -390,6 +391,7 @@ int main(int ac, char *av[])
+                 " a passphrase or key.\n";
+             return 1;
+         }
++#endif
+ 
+         pcap_options.baseopts.gzip_output = ( vm.count("gzip-output") != 0 );
+         pcap_options.baseopts.xz_output = ( vm.count("xz-output") != 0 );
+
