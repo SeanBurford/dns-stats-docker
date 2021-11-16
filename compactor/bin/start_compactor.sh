@@ -8,4 +8,4 @@ GID=$GID
 mkdir -m 0755 -p /var/dnstap
 mkdir -m 0755 -p /var/log/dnstap
 
-exec /usr/bin/tini -- compactor -c /etc/dns-stats-compactor/compactor.conf
+exec /usr/bin/tini -- compactor -c "/etc/dns-stats-compactor/compactor.conf" -o "/var/log/dnstap/${HOSTNAME}-%Y%m%d-%H%M%S.cdns"
