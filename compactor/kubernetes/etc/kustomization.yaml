@@ -1,0 +1,13 @@
+# Preview: kubectl kustomize ./
+# Apply: kubectl apply -k .
+namespace: nsd-dev
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    app: nsd
+configMapGenerator:
+- name: dns-stats-config
+  files:
+  - compactor.conf
+  - default_values.conf
+  - excluded_fields.conf

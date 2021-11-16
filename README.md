@@ -14,6 +14,8 @@ the logs from compactor.
 Optionally, mount a config map at `/etc/dns-stats-compactor/` to provide compactor.conf.
 
 Run dns-stats-compactor in the same Kubernetes pod as your name server.
+I found this blog post on [multi container pods](https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/)
+useful.
 
 Configure your name server to send dnstap records to the dnstap Unix socket.
 
@@ -25,6 +27,7 @@ the uncompressed mmdb files.
 
 ## Build
 
+*  `cd compactor`
 *  `vi Makefile`: Modify `IMAGES_REPO` to point to your repo.
 *  `make all`: Build the image and push it to your repo.
 
