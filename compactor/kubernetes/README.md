@@ -1,5 +1,18 @@
 # dns-stats compactor Kubernetes config
 
+## Testing
+
+If you have a dnstap file (named `/tmp/dnstap/dnstap`) you can use socat
+from the name server container (`nsd` in this case) to verify that cDNS
+files are written to the log directory:
+
+```
+cat /tmp/dnstap/dnstap | \
+  kubectl exec -n nsd-dev deploy/nsd -c nsd -i -t -- socat - UNIX-CONNECT:/var/dnstap/dnstap.sock
+```
+
+## Deployment.yaml
+
 Sample deployment.yaml:
 
 ```
