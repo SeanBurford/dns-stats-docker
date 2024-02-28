@@ -54,7 +54,7 @@ RUN apt-get -y update -qq && \
       libboost-filesystem1.71.0 libboost-iostreams1.71.0 \
       libboost-program-options1.71.0 libboost-log1.71.0 \
       libpcap0.8 liblzma5 libtins4.0 libmaxminddb0 \
-      libprotobuf17 socat
+      libprotobuf17 socat libctemplate3
  
 COPY bin /usr/local/bin
 COPY etc/dns-stats/compactor.conf /etc/dns-stats-compactor/compactor.conf
